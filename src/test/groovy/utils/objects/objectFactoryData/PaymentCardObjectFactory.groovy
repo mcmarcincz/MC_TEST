@@ -1,14 +1,14 @@
 package utils.objects.objectFactoryData
 
 import utils.helpers.RandomStringGenerator
-import utils.objects.PaymentCardObject
+import utils.objects.PaymentCardsObject
 
 class PaymentCardObjectFactory {
 
-def static PaymentCardObject object
+def static PaymentCardsObject object
     def static getPaymentCardObjectData() {
         if(object == null) {
-            object = new PaymentCardObject();
+            object = new PaymentCardsObject();
             def randomFirstName = new RandomStringGenerator().getRandomString(16);
             def randomLastName = new RandomStringGenerator().getRandomString(32);
             def oneNumb3 = new Random().nextInt(1000);

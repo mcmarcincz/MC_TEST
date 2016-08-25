@@ -2,7 +2,7 @@ package modules.bookingPaymentPageModules
 
 import geb.Module
 import utils.helpers.ActionOnElement
-import utils.objects.PaymentCardObject
+import utils.objects.PaymentCardsObject
 
 
 class CardDetailsModule extends  Module {
@@ -15,7 +15,7 @@ class CardDetailsModule extends  Module {
         cardHolderInput(required: false)                {$(" payment-method-card  input[name='cardHolderName']")}
     }
 
-    def addCardDetails(PaymentCardObject object){
+    def addCardDetails(PaymentCardsObject object){
 
         waitFor { cardNumberInput.isDisplayed() }
         ActionOnElement.enterTextToInputText(cardNumberInput, object.cardNumber)

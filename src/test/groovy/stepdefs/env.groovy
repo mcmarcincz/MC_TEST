@@ -17,3 +17,10 @@ After() {
     def cachedDriver = CachingDriverFactory.clearCacheAndQuitDriver()
     bindingUpdater.remove()
 }
+
+
+After('@CleanUp'){
+    bindingUpdater.browser.clearCookies()
+    CachingDriverFactory.clearCache()
+    bindingUpdater.browser.quit()
+}
